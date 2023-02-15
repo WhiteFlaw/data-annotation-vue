@@ -1,0 +1,21 @@
+{
+  "name": "data-annotate-vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.2.0",
+    "core-js": "^3.28.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-router": "~4.5.13",
+    "@vue/cli-service": "~4.5.13",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
