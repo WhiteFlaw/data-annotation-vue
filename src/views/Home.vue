@@ -8,7 +8,7 @@ import { Editor } from "../../public/js/editor.js";
 import { Data } from "../../public/js/data.js";
 import { manager } from "../../public/js/backup/manager.js";
 import { editorTemplate } from "../../public/js/template/editorTemplate";
-import { analyseDomStr } from "../../public/js/util";
+import { analyseDomStr } from "@/utils/tools";
 
 export default {
   name: "Home",
@@ -33,8 +33,9 @@ export default {
     async start() {
       let mainEditor = await this.createMainEditor();
 
-      let url_string = window.location.href;
+      let url_string = `http://127.0.0.1:8081/`; // window.location.href;
       let url = new URL(url_string);
+
       //language
       let scene = url.searchParams.get("scene");
       let frame = url.searchParams.get("frame");

@@ -23,7 +23,7 @@ import { CropScene } from './crop_scene.js';
 import { ConfigUi } from './config_ui.js';
 import { MovableView } from './popup_dialog.js';
 import { globalKeyDownManager } from './keydown_manager.js';
-import { vector_range } from "./util.js"
+import { vector_range } from "@/utils/tools"
 import { checkScene } from './error_check.js';
 import { manager } from "./backup/manager.js";
 
@@ -102,6 +102,7 @@ function Editor(editorUi, wrapperUi, editorCfg, data, name = "editor") {
         //
         this.scene = new THREE.Scene();
         this.mainScene = this.scene; //new THREE.Scene();
+
 
         this.data.set_webglScene(this.scene, this.mainScene);
 
@@ -959,7 +960,6 @@ function Editor(editorUi, wrapperUi, editorCfg, data, name = "editor") {
     };
 
     this.frame_changed = function (event) {
-        console.log("frame_changed", event);
         var sceneName = this.editorUi.querySelector("#scene-selector").value;
 
         if (sceneName.length == 0 && this.data.world) {

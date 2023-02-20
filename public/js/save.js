@@ -1,7 +1,7 @@
 import { checkScene } from "./error_check.js";
 import { logger } from "./log.js"
 import { manager } from "./backup/manager.js";
-import { copyWorld } from './util.js'
+import { copyWorld } from '@/utils/tools'
 
 
 function reloadWorldList(worldList, done) {
@@ -33,7 +33,7 @@ function reloadWorldList(worldList, done) {
         }
     };
 
-    xhr.open('POST', "/loadworldlist", true);
+    xhr.open('POST', "/api/loadworldlist", true);
 
     let para = worldList.map(w => {
         return {
@@ -114,7 +114,7 @@ function doSaveWorldList(worldList, done) {
     })
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/saveworldlist", true);
+    xhr.open("POST", "/api/saveworldlist", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onreadystatechange = function () {

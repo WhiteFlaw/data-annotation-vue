@@ -76,7 +76,7 @@ class ObjectIdManager
 
         var xhr = new XMLHttpRequest();
         // we defined the xhr
-        let self =this;
+        let self = this;
 
         xhr.onreadystatechange = function() {
             if (this.readyState != 4) 
@@ -99,7 +99,7 @@ class ObjectIdManager
     
         };
         
-        xhr.open('GET', "/objs_of_scene?scene="+scene, true);
+        xhr.open('GET', "/api/objs_of_scene?scene="+scene, true);
         xhr.send();
     }
     

@@ -3,7 +3,7 @@
 import * as THREE from './lib/three.module.js';
 import { globalObjectCategory } from './obj_cfg.js';
 import { saveWorldList } from "./save.js"
-import { intersect } from './util.js';
+import { intersect } from '@/utils/tools';
 
 
 function Annotation(sceneMeta, world, frameInfo) {
@@ -319,7 +319,7 @@ function Annotation(sceneMeta, world, frameInfo) {
 
     this.add_box = function (pos, scale, rotation, obj_type, track_id, obj_attr) {
         let objAttr
-        if(document.querySelector("#if-default-use").checked === true) {
+        if (document.querySelector("#if-default-use").checked === true) {
             objAttr = document.querySelector("#attribute-selector").value
         } else {
             objAttr = obj_attr;
@@ -406,7 +406,6 @@ function Annotation(sceneMeta, world, frameInfo) {
 
 
         this.proc_annotation = function (boxes) {
-
             // boxes = this.transformBoxesByEgoPose(boxes);
             // boxes = this.transformBoxesByOffset(boxes);
 
@@ -446,7 +445,7 @@ function Annotation(sceneMeta, world, frameInfo) {
                 // end of state change: it can be after some time (async)
             };
 
-            xhr.open('GET', "/load_annotation" + "?scene=" + this.frameInfo.scene + "&frame=" + this.frameInfo.frame, true);
+            xhr.open('GET', "/api/load_annotation" + "?scene=" + this.frameInfo.scene + "&frame=" + this.frameInfo.frame, true);
             xhr.send();
         }
     };

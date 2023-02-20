@@ -21,7 +21,7 @@ function autoAnnotate(world, done, alg){
         }
     };
     
-    xhr.open('GET', "/auto_annotate?"+"scene="+world.frameInfo.scene+"&frame="+world.frameInfo.frame, true);
+    xhr.open('GET', "/api/auto_annotate?"+"scene="+world.frameInfo.scene+"&frame="+world.frameInfo.frame, true);
 
     xhr.send();
 }

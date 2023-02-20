@@ -1,6 +1,6 @@
 
 
-import { psr_to_xyz } from "./util.js"
+import { psr_to_xyz } from "@/utils/tools"
 import * as THREE from './lib/three.module.js';
 import { globalObjectCategory } from "./obj_cfg.js";
 class FastToolBox {

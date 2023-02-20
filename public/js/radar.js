@@ -1,6 +1,6 @@
 import * as THREE from './lib/three.module.js';
 import { PCDLoader } from './lib/PCDLoader.js';
-import { matmul, euler_angle_to_rotate_matrix_3by3} from "./util.js"
+import { matmul, euler_angle_to_rotate_matrix_3by3} from "@/utils/tools"
 
 function Radar(sceneMeta, world, frameInfo, radarName){
     this.world = world;

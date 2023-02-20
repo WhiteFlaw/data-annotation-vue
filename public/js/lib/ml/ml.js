@@ -26389,7 +26389,7 @@ function distanceMatrix( X ) {
 /// Utilities for loading standard ML models and data
 //////////////////////////////////////////
 function loadmodel ( url, format ) {
-	
+	console.log(url);
 	// load a remote file (from same web server only...)
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', url, false); // false = synchronous

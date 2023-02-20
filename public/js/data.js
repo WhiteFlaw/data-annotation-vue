@@ -4,7 +4,7 @@ import { World } from "./world.js";
 import { Debug } from "./debug.js";
 import { logger } from "./log.js"
 import { manager } from "./backup/manager.js";
-import { copyWorld, setWorld, replaceWorld } from "./util.js";
+import { copyWorld, setWorld, replaceWorld } from "@/utils/tools";
 
 class Data {
 
@@ -14,14 +14,11 @@ class Data {
     }
 
     async readSceneList() {
-        const req = new Request("/get_all_scene_desc");
-        let init = {
-            method: 'GET',
-            //body: JSON.stringify({"points": data})
-        };
-        // we defined the xhr
+        let init = { method: 'GET' };
 
-        return fetch(req, init)
+        const req = new Request('/api/get_all_scene_desc', init);
+
+        return fetch(req)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -464,7 +461,7 @@ class Data {
 
             };
 
-            xhr.open('GET', `/scenemeta?scene=${sceneName}`, true);
+            xhr.open('GET', `/api/scenemeta?scene=${sceneName}`, true);
             xhr.send();
         });
     }

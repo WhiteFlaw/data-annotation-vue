@@ -2,7 +2,7 @@ import * as THREE from './lib/three.module.js';
 import { OrbitControls } from './lib/OrbitControls.js';
 //import { OrthographicTrackballControls } from './lib/OrthographicTrackballControls.js';
 import { TransformControls } from './lib/TransformControls.js';
-import {matmul2, euler_angle_to_rotate_matrix} from "./util.js"
+import {matmul2, euler_angle_to_rotate_matrix} from "@/utils/tools"
 
 
 function ViewManager(mainViewContainer, webglScene, webglMainScene, renderer, globalRenderFunc, on_box_changed, cfg){

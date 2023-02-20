@@ -9,7 +9,7 @@ import { checkScene } from "./error_check.js";
 import { logger } from "./log.js";
 import { boxEditorUiTemplate } from '../js/template/boxEditorUiTemplate';
 import { batchEditorToolsTemplate } from '../js/template/batchEditorToolsTemplate';
-import { analyseDomStr } from '../js/util';
+import { analyseDomStr } from '@/utils/tools';
 
 /*
 2 ways to attach and edit a box

@@ -1,9 +1,8 @@
 
-import {vector4to3, vector3_nomalize, psr_to_xyz, matmul} from "./util.js"
-import {globalObjectCategory, } from './obj_cfg.js';
+import { vector4to3, vector3_nomalize, psr_to_xyz, matmul, analyseDomStr } from "@/utils/tools"
+import { globalObjectCategory } from './obj_cfg.js';
 import { MovableView } from "./popup_dialog.js";
 import { imageWrapperTemplate } from '../js/template/imageWrapperTemplate';
-import { analyseDomStr } from "./util.js";
 
 function BoxImageContext(ui){
 

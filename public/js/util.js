@@ -685,7 +685,7 @@ function replaceWorld(oldWorld, newWorld) { // oldWorld数据应用至newWorld
 function analyseDomStr(str, target) {
     const template = document.createElement('div'); // 能不能创建一个fragment作为template
     template.innerHTML = str;
-    target.appendChild(template.children[0]);
+    target.appendChild(template);
 }
 
 export {
