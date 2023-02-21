@@ -9,5 +9,5 @@ import { POST } from '@/utils/http-client'
   * @returns { AxiosPromise }
   */
 export function Generate(data) {
-    return POST('/cropscene', data)
-  }
+  return POST('/cropscene', data)
+}

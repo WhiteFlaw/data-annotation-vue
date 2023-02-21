@@ -7,5 +7,5 @@ import { GET } from '@/utils/http-client'
   * @returns { AxiosPromise }
   */
 export function AutoAnnotate(params) {
-    return GET(`/auto_annotate?scene=${params.scene}&frame=${params.frame}`);
+  return GET(`/auto_annotate?scene=${params.scene}&frame=${params.frame}`)
 }

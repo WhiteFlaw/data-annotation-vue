@@ -6,5 +6,5 @@ import { GET } from '@/utils/http-client'
   * @returns { AxiosPromise }
   */
 export function LoadObjIdsOfScene(params) {
-    return GET(`/objs_of_scene?scene=${params.scene}`);
+  return GET(`/objs_of_scene?scene=${params.scene}`)
 }

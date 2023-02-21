@@ -6,7 +6,7 @@ import { POST } from '@/utils/http-client'
   * @returns { AxiosPromise }
   */
 export function ReloadWorldList(data) {
-    return POST(`/loadworldlist`, data);
+  return POST(`/loadworldlist`, data)
 }
 
 /**
@@ -15,5 +15,5 @@ export function ReloadWorldList(data) {
   * @returns { AxiosPromise }
   */
 export function SaveWorldList(data) {
-    return POST(`/saveworldlist`, data)
+  return POST(`/saveworldlist`, data)
 }
