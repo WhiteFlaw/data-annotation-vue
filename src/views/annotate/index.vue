@@ -3,11 +3,11 @@
 </template>
 
 <script>
-import { Config } from '/public/js/config.js'
-import { Editor } from '/public/js/editor.js'
-import { Data } from '/public/js/data.js'
-import { manager } from '/public/js/backup/manager.js'
-import { editorTemplate } from '/public/js/template/editorTemplate'
+import { Config } from '../../../public/js/config'
+import { Editor } from '../../../public/js/editor.js'
+import { Data } from '../../../public/js/data.js'
+import { manager } from '../../../public/js/backup/manager.js'
+import { editorTemplate } from '../../../public/js/template/editorTemplate'
 import { analyseDomStr } from '@/utils/tools'
 
 export default {
@@ -78,5 +78,5 @@ export default {
 </script>
 
 <style scoped>
-@import "/public/css/main.css";
+@import "../../../public/css/main.css";
 </style>

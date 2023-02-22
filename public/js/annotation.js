@@ -445,7 +445,7 @@ function Annotation(sceneMeta, world, frameInfo) {
                 // end of state change: it can be after some time (async)
             };
 
-            xhr.open('GET', "/api/load_annotation" + "?scene=" + this.frameInfo.scene + "&frame=" + this.frameInfo.frame, true);
+            xhr.open('GET', "/dev-ann-api/load_annotation" + "?scene=" + this.frameInfo.scene + "&frame=" + this.frameInfo.frame, true);
             xhr.send();
         }
     };

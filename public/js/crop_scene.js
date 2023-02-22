@@ -30,7 +30,7 @@ class CropScene extends PopupDialog{
                 }
             };
             
-            xhr.open('POST', "/api/cropscene", true);
+            xhr.open('POST', "/dev-ann-api/cropscene", true);
 
             let para={
                 rawSceneId: this.editor.data.world.frameInfo.scene,

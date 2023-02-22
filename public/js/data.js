@@ -16,7 +16,7 @@ class Data {
     async readSceneList() {
         let init = { method: 'GET' };
 
-        const req = new Request('/api/get_all_scene_desc', init);
+        const req = new Request('/dev-ann-api/get_all_scene_desc', init);
 
         return fetch(req)
             .then(response => {
@@ -461,7 +461,7 @@ class Data {
 
             };
 
-            xhr.open('GET', `/api/scenemeta?scene=${sceneName}`, true);
+            xhr.open('GET', `/dev-ann-api/scenemeta?scene=${sceneName}`, true);
             xhr.send();
         });
     }
