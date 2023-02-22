@@ -605,7 +605,7 @@ dynamic set obj-type css has higher priority than this one.
 
 
 .float-label {
-	color: #0000ff;
+	/* color: #0000ff; */
 	position: absolute;
 	display: inline-flex;
 }
