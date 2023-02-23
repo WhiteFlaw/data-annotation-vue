@@ -44,7 +44,7 @@ class EgoPose
             // end of state change: it can be after some time (async)
         };
         
-        xhr.open('GET', "/api/load_ego_pose"+"?scene="+this.world.frameInfo.scene+"&frame="+this.world.frameInfo.frame, true);
+        xhr.open('GET', "/dev-ann-api/load_ego_pose"+"?scene="+this.world.frameInfo.scene+"&frame="+this.world.frameInfo.frame, true);
         xhr.send();
     };
 

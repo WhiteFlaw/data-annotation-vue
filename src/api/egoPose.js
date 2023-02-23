@@ -7,5 +7,5 @@ import { GET } from '@/utils/http-client'
   * @returns { AxiosPromise }
   */
 export function LoadEgoPose(params) {
-    return GET(`/load_ego_pose?scene=${params.scene}&frame=${params.frame}`);
+  return GET(`/load_ego_pose?scene=${params.scene}&frame=${params.frame}`)
 }

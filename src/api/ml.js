@@ -6,7 +6,7 @@ import { POST, GET } from '@/utils/http-client'
   * @returns { AxiosPromise }
   */
 export function PredictRotation(data) {
-  return POST(`/predict_rotation`, data);
+  return POST(`/predict_rotation`, data)
 }
 
 /**
@@ -15,7 +15,7 @@ export function PredictRotation(data) {
   * @returns { AxiosPromise }
   */
 export function ImportLaloScript(data) { // url需要传入, 但该接口未调用
-  return GET(``, data);
+  return GET(``, data)
 }
 
 /**
@@ -24,7 +24,7 @@ export function ImportLaloScript(data) { // url需要传入, 但该接口未调�
   * @returns { AxiosPromise }
   */
 export function LoadModel(data) { // url需要传入, 但该接口未调用
-  return GET(``, data);
+  return GET(``, data)
 }
 
 /**
@@ -33,5 +33,5 @@ export function LoadModel(data) { // url需要传入, 但该接口未调用
   * @returns { AxiosPromise }
   */
 export function LoadData(data) { // url需要传入, 但该接口未调用
-  return GET(``, data);
+  return GET(``, data)
 }

@@ -2698,6 +2698,7 @@ function Editor(editorUi, wrapperUi, editorCfg, data, name = "editor") {
                 'stroke:' + color + ';' +
                 'fill:' + color + '22' + ';' +
                 '}';
+
             sheet.insertRule(rule, sheet.cssRules.length);
         }
 

@@ -6,5 +6,5 @@ import { GET } from '@/utils/http-client'
   * @returns { AxiosPromise }
   */
 export function AutoAnnotate(params) {
-    return GET(`/scenemeta?scene=${params.sceneName}`);
+  return GET(`/scenemeta?scene=${params.sceneName}`)
 }

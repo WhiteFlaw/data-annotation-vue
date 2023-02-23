@@ -273,7 +273,7 @@ var ml = {
     // },
 
     predict_rotation: function (data) {
-        const req = new Request("/predict_rotation");
+        const req = new Request("/dev-ann-api/predict_rotation");
         let init = {
             method: 'POST',
             body: JSON.stringify({ "points": data })

@@ -33,7 +33,7 @@ function reloadWorldList(worldList, done) {
         }
     };
 
-    xhr.open('POST', "/api/loadworldlist", true);
+    xhr.open('POST', "/dev-ann-api/loadworldlist", true);
 
     let para = worldList.map(w => {
         return {
@@ -114,7 +114,7 @@ function doSaveWorldList(worldList, done) {
     })
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/api/saveworldlist", true);
+    xhr.open("POST", "/dev-ann-api/saveworldlist", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onreadystatechange = function () {
