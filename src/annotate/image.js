@@ -562,15 +562,15 @@ class ImageContext { // 2D视图区
     }
 
     hide() {
-        this.ui.style.display = "none";
+        this.parentUi.querySelector(`#img-manager-${this.name}`).style.display = "none";
     };
 
     show() {
-        this.ui.style.display = "";
+        this.parentUi.querySelector(`#img-manager-${this.name}`).style.display = "";
     };
 
     hidden() {
-        this.ui.style.display == "none";
+        this.parentUi.querySelector(`#img-manager-${this.name}`).style.display == "none";
     };
 
     point_color_by_distance(x, y) {
@@ -616,8 +616,7 @@ class ImageContext { // 2D视图区
         )
     }
 
-    // TODO 检查是否被调用
-    to_viewbox_coord(x, y) {
+    /* to_viewbox_coord(x, y) {
         var div = this.ui.querySelector("#maincanvas-svg");
 
         const imgSize = this.getImagePixelRatio();
@@ -627,7 +626,7 @@ class ImageContext { // 2D视图区
 
         return [x, y];
 
-    }
+    } */
 
     show_image() {
             var board = document.querySelector(`#svg-${this.name}-image`);
@@ -695,9 +694,9 @@ class ImageContext { // 2D视图区
         // this.ui.style.display = "none";
     }
 
-    show_canvas() {
+    /* show_canvas() {
         this.ui.style.display = "inline";
-    }
+    } */
 }
 
 class ImageEditor { // 图片编辑器
