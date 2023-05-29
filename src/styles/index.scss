@@ -9,7 +9,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, Arial, sans-serif;
 }
 
 label {
@@ -53,7 +54,7 @@ div:focus {
     visibility: hidden;
     display: block;
     font-size: 0;
-    content: " ";
+    content: ' ';
     clear: both;
     height: 0;
   }
@@ -73,6 +74,101 @@ div:focus {
 }
 
 .el-menu-item,
-.el-submenu__title{
+.el-submenu__title {
   font-weight: bold;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+// pageContainer组件公共样式
+.page-container {
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+
+  .page-title {
+    padding: 10px 15px;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 20px;
+
+    svg {
+      margin-right: 10px;
+    }
+  }
+  .page-content-area {
+    padding: 15px;
+    flex-grow: 1;
+
+    &.overflow-y-auto{
+      overflow-y: auto;
+    }
+  }
+  .page-search-area {
+    padding: 0 15px;
+    & + .page-content-area {
+      padding-top: 0;
+    }
+  }
+}
+// 弹窗公共加border
+.el-dialog-border{
+  .el-dialog__header{
+    border-bottom: 1px solid #F1F2F4;
+  }
+  .el-dialog__footer {
+    border-top: 1px solid #F1F2F4;
+  }
+}
+// 进度条公共样式
+.el-progress-class.progress-container {
+  display: flex;
+  justify-content: space-between;
+
+  .progress-label{
+    width:64px;
+    text-align:justify;
+    text-align-last:justify;
+  }
+  .el-progress {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    .el-progress-bar {
+      flex-grow: 1;
+    }
+    .el-progress__text{
+      width:112px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+  }
+}
+.has-chart-container{
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+
+  .table-container{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .chart-container{
+    padding-left:30px;
+    flex-shrink: 0;
+
+    h2{
+      text-align: center;
+      margin-top:0;
+    }
+  }
 }

@@ -11,19 +11,18 @@
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
-          <router-link to="/">
+          <router-link :to="homePage">
             <el-dropdown-item>
-              Home
+              主页
             </el-dropdown-item>
           </router-link>
-          <a target="_blank" href="https://github.com/PanJiaChen/vue-admin-template/">
-            <el-dropdown-item>Github</el-dropdown-item>
-          </a>
-          <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">
-            <el-dropdown-item>Docs</el-dropdown-item>
-          </a>
+          <router-link to="/">
+            <el-dropdown-item>
+              切换2D/3D入口
+            </el-dropdown-item>
+          </router-link>
           <el-dropdown-item divided @click.native="logout">
-            <span style="display:block;">Log Out</span>
+            <span style="display:block;">登出</span>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -43,16 +42,34 @@ export default {
   },
   data() {
     return {
-      avatarUrl: require('@/assets/images/logo.png')
+      avatarUrl: require('@/assets/images/logo.png'),
+      homePage: ''
     }
   },
   computed: {
     ...mapGetters([
       'sidebar',
-      'avatar'
+      'avatar',
+      'roles'
     ])
   },
+  mounted() {
+    this.getHomePage()
+  },
   methods: {
+    getHomePage() { // 根据账号权限选择主页
+      if (this.roles.indexOf('admin') !== -1) {
+        this.homePage = '/project-management/data-management'
+      } else if ((this.roles.indexOf('manager') !== -1 || this.roles.indexOf('teamLeader') !== -1) && this.roles.indexOf('admin') === -1) {
+        this.homePage = '/dashboard'
+      } else if (this.roles.indexOf('tagger') !== -1) {
+        this.homePage = '/myTask/taggingTask/project-list'
+      } else if (this.roles.indexOf('qc') !== -1) {
+        this.homePage = '/myTask/roundOfInspection'
+      } else if (this.roles.indexOf('at') !== -1) {
+        this.homePage = '/checkManagement/projectList'
+      }
+    },
     toggleSideBar() {
       this.$store.dispatch('app/toggleSideBar')
     },

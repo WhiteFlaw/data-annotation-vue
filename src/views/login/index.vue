@@ -1,40 +1,61 @@
 <template>
-  <div class="login-container">
-    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" auto-complete="on" label-position="left">
-      <div class="box">
-        <header>
-          <img srcset="../../assets/images/ytxgkLog.png, ../../assets/images/ytxgkLog2.png 2x" src="../../assets/images/ytxgkLog.png">
-        </header>
-        <main>
-          <img class="imgFirst" srcset="../../assets/images/backgroundImg.png, ../../assets/images/backgroundImg2.png 2x" src="../../assets/images/backgroundImg.png">
-          <img class="imgSecond" srcset="../../assets/images/backImg.png, ../../assets/images/backImg2.png 2x" src="../../assets/images/backImg.png">
-          <div class="logBox">
-            <h2>数据管理平台</h2>
-            <h3>登录</h3>
+  <LoginSlot>
+    <template slot="login">
+      <h2>数据管理平台</h2>
+      <el-form ref="loginForm" inline :model="loginForm" :rules="loginRules" auto-complete="on" label-position="left">
+        <el-row>
+          <el-col>
             <el-form-item prop="username">
-              <el-input ref="username" v-model="loginForm.username" class="login-input" placeholder="请输入账号" name="username" type="text" tabindex="1" auto-complete="on" />
+              <el-input
+                ref="username"
+                v-model="loginForm.username"
+                class="login-input"
+                placeholder="请输入账号"
+                name="username"
+                type="text"
+                tabindex="1"
+                auto-complete="on" />
             </el-form-item>
+          </el-col>
+          <el-col>
             <el-form-item prop="password">
-              <el-input :key="passwordType" ref="password" v-model="loginForm.password" class="login-input" :type="passwordType" placeholder="请输入密码" name="password" tabindex="2" auto-complete="on" @keyup.enter.native="handleLogin" />
+              <el-input
+                :key="passwordType"
+                ref="password"
+                v-model="loginForm.password"
+                class="login-input"
+                :type="passwordType"
+                placeholder="请输入密码"
+                name="password"
+                tabindex="2"
+                auto-complete="on"
+                @keyup.enter.native="handleLogin" />
             </el-form-item>
-            <p>
-              <el-button class="inputBtn1" :loading="loading" type="primary" @click.native.prevent="handleLogin"> 登录 </el-button>
-            </p>
-            <p>
-              <el-button class="inputBtn2"> 手机号登录 </el-button>
-            </p>
-          </div>
-        </main>
-      </div>
-    </el-form>
-  </div>
+          </el-col>
+          <el-col>
+            <el-form-item>
+              <el-button class="inputBtn1" :loading="loading" type="primary" round @click.native.prevent="handleLogin"> 登录 </el-button>
+            </el-form-item>
+          </el-col>
+          <el-col>
+            <el-form-item>
+              <el-button type="text" class="inputBtn2"> 手机号登录 </el-button>
+            </el-form-item>
+          </el-col>
+        </el-row>
+      </el-form>
+    </template>
+  </LoginSlot>
 </template>
 
 <script>
 // import { validUsername } from '@/utils/validate'
 
+import { mapGetters } from 'vuex'
+import LoginSlot from '@/components/LoginSlot'
 export default {
   name: 'Login',
+  components: { LoginSlot },
   data() {
     // const validateUsername = (rule, value, callback) => {
     //   if (!validUsername(value)) {
@@ -64,6 +85,9 @@ export default {
       redirect: undefined
     }
   },
+  computed: {
+    ...mapGetters(['token'])
+  },
   watch: {
     $route: {
       handler: function(route) {
@@ -84,16 +108,20 @@ export default {
       })
     },
     handleLogin() {
-      this.$refs.loginForm.validate(valid => {
+      this.$refs.loginForm.validate((valid) => {
         if (valid) {
           this.loading = true
-          this.$store.dispatch('user/login', this.loginForm).then(() => {
-            this.loading = false
-            this.$router.push({ path: this.redirect || '/' })
-            // window.location.href = 'http://10.30.13.8:8081'
-          }).catch(() => {
-            this.loading = false
-          })
+          this.$store
+            .dispatch('user/login', this.loginForm)
+            .then(() => {
+              this.$router.push({ path: '/' })
+              this.loading = false
+              // this.$router.push({ path: this.redirect || '/' })
+              // window.location.href = 'http://10.30.13.8:8081'
+            })
+            .catch(() => {
+              this.loading = false
+            })
         } else {
           console.log('error submit!!')
           return false
@@ -105,5 +133,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "login";
+@import 'login';
 </style>

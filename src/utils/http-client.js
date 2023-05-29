@@ -16,3 +16,21 @@ export function POST(url, data = {}, params = {}) {
     method: 'post'
   })
 }
+
+export function PUT(url, data = {}, params = {}) {
+  return request({
+    url,
+    data,
+    params,
+    method: 'put'
+  })
+}
+
+export function DELETE(url, data = {}, params = {}) {
+  return request({
+    url,
+    data,
+    params,
+    method: 'delete'
+  })
+}
